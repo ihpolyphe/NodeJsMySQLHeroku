@@ -8,6 +8,10 @@ npm init
 
 npm install express --save
 
+npm install -save ejs
+
+npm install mysql
+
 ## CLI から heroku にアプリを追加する
 
 heroku create
@@ -43,8 +47,12 @@ Node.js + MySQL で作ったアプリを Heroku にデプロイする
 
 https://qiita.com/atlansien/items/c1596fb8df94abb034f4
 
-## 明日 ↓ を参考に MySQL デプロイの動作確認する
+## MySQL デプロイの動作確認する
 
 node.js ✖️ express.js ✖️ mysql の web アプリ heroku 公開までの方法
 
 https://zenn.dev/toshi_h/articles/c3e3df74d6ceb8897c9d
+
+## MySQL のテーブル内容をデプロイして確認完了
+
+ランダムシックス作成
