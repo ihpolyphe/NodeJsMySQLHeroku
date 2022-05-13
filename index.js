@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-var mysql = require("mysql");
+// var mysql = require("mysql");
 
 // const connection = mysql.createConnection({
 //   host: "us-cdbr-east-05.cleardb.net",
