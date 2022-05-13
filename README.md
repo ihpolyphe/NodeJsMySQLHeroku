@@ -56,3 +56,7 @@ https://zenn.dev/toshi_h/articles/c3e3df74d6ceb8897c9d
 ## MySQL のテーブル内容をデプロイして確認完了
 
 ランダムシックス作成
+
+## デプロイ後の URL
+
+https://morning-cove-72329.herokuapp.com/
