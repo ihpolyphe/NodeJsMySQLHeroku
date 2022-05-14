@@ -20,10 +20,13 @@ connection.connect(function (err) {
 });
 
 app.get("/", (req, res) => {
-  connection.query("SELECT * FROM pokemonzukan", (error, results) => {
-    res.render("hello.ejs", { pokemonzukan: results });
-    console.log(results[0].id);
-  });
+  connection.query(
+    "SELECT * FROM pokemonzukan ORDER BY RAND() LIMIT 1",
+    (error, results) => {
+      res.render("hello.ejs", { pokemonzukan: results });
+      console.log(results[0].id);
+    }
+  );
 });
 
 app.listen(port, () => {
