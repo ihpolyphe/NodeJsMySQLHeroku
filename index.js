@@ -21,10 +21,10 @@ app.get("/api/pokemon", (req, res) => {
   });
 
   connection.query(
-    "SELECT * FROM pokemonzukan ORDER BY RAND() LIMIT 1",
+    "SELECT * FROM pokemonzukan ORDER BY RAND() LIMIT 6",
     (error, results) => {
-      console.log(results[0]);
-      res.send(results[0].name);
+      console.log(results);
+      res.send(results);
       connection.end();
     }
   );
@@ -32,6 +32,6 @@ app.get("/api/pokemon", (req, res) => {
 
 var port = process.env.PORT || 5000;
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log("Start server port:5000");
 });

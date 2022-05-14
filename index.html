@@ -1,30 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <title>pokemon random six</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
   </head>
+  <style>
+    .main {
+      margin: 0 auto;
+      margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 30px;
+    }
+  </style>
+
+  <script>
+    const pokemonDisplay = () => {
+      const request = new XMLHttpRequest();
+
+      request.onreadystatechange = () => {
+        if (request.readyState === 4) {
+          if (request.status === 200) {
+            if (request.response) {
+              const jsonObj = JSON.parse(request.responseText);
+              display(jsonObj, "txt");
+            }
+          }
+        }
+      };
+
+      request.open("GET", "/api/pokemon");
+      request.send();
+    };
+    const display = (obj, id) => {
+      let text = [];
+      for (let item of obj) {
+        text.push(
+          '<li class="list-group-item">' +
+            "図鑑No.: " +
+            item.id +
+            " 名前: " +
+            item.name +
+            "</li>"
+        );
+      }
+      document.getElementById(id).innerHTML = text.join("");
+    };
+
+    window.onload = () => {
+      btn.onclick = () => {
+        pokemonDisplay();
+      };
+    };
+  </script>
   <body>
-    <h1>random six 生成アプリ</h1>
-    <button id="submit_btn">random six</button>
-    <p id="pokemon"></p>
+    <div class="main container">
+      <h2><span class="badge bg-primary">表示</span></h2>
+      <ul id="txt" class="list-group list-group-flush"></ul>
+
+      <div class="row">
+        <button id="btn" type="button" class="btn btn-warning">実行</button>
+      </div>
+    </div>
   </body>
 </html>
-
-<script>
-  document.getElementById("submit_btn").addEventListener("click", function () {
-    xhr = new XMLHttpRequest();
-    xhr.open("GET", "/api/pokemon");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          var pokenmon = document.getElementById("pokemon");
-          pokemon.innerHTML = xhr.response;
-        } else {
-          alert("データが正常に送れませんでした");
-        }
-      }
-    };
-    xhr.send();
-  });
-</script>
