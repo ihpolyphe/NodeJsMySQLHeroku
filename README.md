@@ -75,3 +75,6 @@ https://code-database.com/knowledges/113
 ### ToDo
 
 veu.js でフロントエンド開発
+
+- json を html 表示する方法まとめる(MySQL から取得するデータは JSON 形式なので、それを JS で HTML 表示する必要がある)
+  [javascript json データを XMLHttpRequest を使って取得する](https://mebee.info/2020/10/25/post-20785/)
