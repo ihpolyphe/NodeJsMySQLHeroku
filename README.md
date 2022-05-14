@@ -60,3 +60,18 @@ https://zenn.dev/toshi_h/articles/c3e3df74d6ceb8897c9d
 ## デプロイ後の URL
 
 https://morning-cove-72329.herokuapp.com/
+
+## 勉強
+
+### express の get と post の違い
+
+GET は情報を取得するときに使うものです。
+POST は新しい情報の登録をするときに使うものです。
+
+### MySQL の結果をボタンをトリガとして出力する
+
+https://code-database.com/knowledges/113
+
+### ToDo
+
+veu.js でフロントエンド開発
